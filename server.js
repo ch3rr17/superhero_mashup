@@ -22,7 +22,7 @@ app.get('/movies-for-hero/:hero', function(req, res) {
 });
 
 app.get('/album-for-movie/:movie', function(req, res) {
-    spotify.search({ type: 'album', query: "%22" + req.params.movie + "%22" }, function(err, data) {
+    spotify.search({ type: 'album', query: req.params.movie }, function(err, data) {
         if (data) {
             res.send(data);
             return;
