@@ -11,11 +11,9 @@
     function MovieController(MovieFactory, $log, $stateParams) {
         var vm = this;
         vm.title = 'MovieController';
-
-
+        vm.noMovies = false;
 
         ////////////////
-
 
         vm.hero = $stateParams.hero;
 
@@ -24,7 +22,9 @@
                 .then(
                     function(response) {
                         vm.movies = response.data.data.results.titles;
-                        console.log(response.data);
+                        if (vm.movies == null) {
+                          vm.noMovies = true;
+                        }
                     },
                     function(error) {
                         $log.error(error);

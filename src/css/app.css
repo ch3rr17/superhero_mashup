@@ -7,7 +7,7 @@ body {
   min-height: 100%;
 }
 
-h1 {
+h1, h3, h4 {
   color: rgb(199,199,199);
   font-family: comic-book;
 }
