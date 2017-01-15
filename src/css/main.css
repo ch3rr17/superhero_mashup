@@ -71,3 +71,11 @@ body {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.75))), url(http://cdn.collider.com/wp-content/uploads/2016/08/dc-superheroes.jpg);
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(http://cdn.collider.com/wp-content/uploads/2016/08/dc-superheroes.jpg);
 }
+
+.marvel {
+  color: #E72730;
+}
+
+.dc {
+  color: #0078F0;
+}

@@ -21,3 +21,7 @@ h1, h3, h4, .home-container {
     font-family: comic-book;
     src: url(../fonts/comic-book.otf);
 }
+
+.loader {
+  max-width: 250px;
+}
