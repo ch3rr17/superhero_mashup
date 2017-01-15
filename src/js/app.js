@@ -8,8 +8,6 @@
 
         .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
-            //$httpProvider.interceptors.push('httpInterceptor');
-
             $urlRouterProvider.otherwise('/');
 
             //Create state for each page
@@ -18,9 +16,11 @@
                           .state('music', { url: '/music/{hero}/{movie}',  templateUrl: 'partials/music.html', controller: 'MusicController as vm' });
 
         })
+
         .run(function($rootScope) {
           $rootScope.currentUniverse = 'marvel';
         })
+
         .directive('backImg', function(){
           return function(scope, element, attrs){
             var url = attrs.backImg;

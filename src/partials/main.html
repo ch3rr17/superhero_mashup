@@ -4,6 +4,7 @@
 
 <div id='main-content' class="container-fluid">
   <h1 class='text-center'>Select a superhero</h1>
+  <h1 class='text-center'>Comic Book</h1>
   <div id='heroes-container' class='container'>
 
     <div class='row text-center'>
@@ -15,12 +16,11 @@
       </div>
     </div>
 
-
     <div id='marvel-heroes' class='row' ng-show='vm.marvelUniverse'>
       <div ng-repeat="hero in vm.marvel">
         <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
           <a ui-sref="movies({hero: '{{hero.name}}'})">
-            <img width=180 ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+            <img width=180 height=auto ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
           </a>
         </div>
       </div>
@@ -30,7 +30,7 @@
       <div ng-repeat="hero in vm.dc">
         <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
           <a ui-sref="movies({hero: '{{hero.name}}'})">
-            <img width=180 ng-src="{{hero.icon}}" />
+            <img width=180 height=auto ng-src="{{hero.icon}}" />
           </a>
         </div>
       </div>
