@@ -12,8 +12,9 @@
         var vm = this;
         vm.title = 'MusicController';
 
+        vm.noAlbum = false;
+        vm.noPhotos = false;
         vm.albumEmbedPlayer = '';
-
 
         ////////////////
 
@@ -21,20 +22,23 @@
 
         vm.trustSrc = function(src) {
             return $sce.trustAsResourceUrl(src);
-        }
+        };
 
         vm.getMusic = function() {
             MusicFactory.getMusicForHero()
                 .then(
                     function(response) {
                         vm.album = response.data.albums.items[0];
-                        vm.albumEmbedPlayer = "https://embed.spotify.com/?uri=spotify%3Aalbum%3A" + vm.album.id;
-                        console.log(response.data);
+                        if (vm.album == null) {
+                          vm.noAlbum = true;
+                        } else {
+                          vm.albumEmbedPlayer = "https://embed.spotify.com/?uri=spotify%3Aalbum%3A" + vm.album.id;
+                        }
                     },
                     function(error) {
                         $log.error(error);
                     });
-        }
+        };
 
         vm.getMusic();
 
@@ -42,13 +46,15 @@
         	MusicFactory.getLifeStyleForHero()
         		.then(
                     function(response) {
-                        vm.lifestyle = response.data;
-                        console.log(response.data);
+                        vm.lifestyleImages = response.data.images;
+                        if (vm.lifestyleImages.length === 0) {
+                          vm.noPhotos = true;
+                        }
                     },
                     function(error) {
                         $log.error(error);
                     });
-        }
+        };
 
         vm.getLifestyle();
     }

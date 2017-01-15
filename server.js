@@ -1,49 +1,40 @@
 var express = require('express');
 var app = express();
-var marvelApi = require('marvel-api');
 var IMDB_API_KEY = 'be0aa2e8-52d7-47be-a191-63e98c5d934a';
-//var GETTY_IMAGES_API_KEY = 'b4734jk5yhgqgv9v4grh923q';
 var request = require('request');
 var spotify = require('spotify');
 
 
-
-
-
 app.get('/movies-for-hero/:hero', function(req, res) {
-
     request('http://imdb.wemakesites.net/api/search?api_key=' + IMDB_API_KEY + '&q=' + req.params.hero,
         function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.send(body);
-            } else {
+            }
+            else {
                 res.send(error);
             }
-        });
+        }
+    );
 });
 
-
-
 app.get('/album-for-movie/:movie', function(req, res) {
-    spotify.search({ type: 'album', query: req.params.movie }, function(err, data) {
+    spotify.search({ type: 'album', query: "%22" + req.params.movie + "%22" }, function(err, data) {
         if (data) {
             res.send(data);
-            console.log(data);
             return;
         }
     });
-
-})
+});
 
 app.get('/lifestyle-for-hero/:hero', function(req, res) {
 
     var options = {
-     url: 'https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&phrase=' + req.params.hero + ' cosplay',
-     headers: {
-     'Api-Key': 'b4734jk5yhgqgv9v4grh923q'
-     }
+      url: 'https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&phrase=' + req.params.hero + ' cosplay',
+      headers: {
+        'Api-Key': 'b4734jk5yhgqgv9v4grh923q'
+      }
     };
-
 
     request(options, function(error, response, body) {
             if (!error && response.statusCode == 200) {
@@ -52,21 +43,7 @@ app.get('/lifestyle-for-hero/:hero', function(req, res) {
                 res.send(error);
             }
     });
-})
-
-/*app.get('/lifestyle-for-hero/:hero', function(req, res) {
-
-    request('https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&api_key='+ GETTY_IMAGES_API_KEY + '&phrase=' + req.params.hero,
-        function(error, response, body) {
-            if (!error && response.statusCode == 200) {
-                res.send(body);
-            } else {
-                res.send(error);
-            }
-        })
-})*/
-
-
+});
 
 app.use('/', express.static(__dirname + '/src'));
-app.listen(3000, function() { console.log('listening') });
+app.listen(3000, function() { console.log('listening on port 3000'); });
