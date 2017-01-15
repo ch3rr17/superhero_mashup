@@ -7,9 +7,14 @@ body {
   min-height: 100%;
 }
 
-h1, h3, h4 {
+h1, h3, h4, .home-container {
   color: rgb(199,199,199);
   font-family: comic-book;
+}
+
+.home-container img {
+  width: 40px;
+  height: 40px;
 }
 
 @font-face {

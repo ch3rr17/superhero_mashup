@@ -3,6 +3,7 @@ var app = express();
 var IMDB_API_KEY = 'be0aa2e8-52d7-47be-a191-63e98c5d934a';
 var request = require('request');
 var spotify = require('spotify');
+var favicon = require('serve-favicon');
 
 
 app.get('/movies-for-hero/:hero', function(req, res) {
@@ -45,5 +46,6 @@ app.get('/lifestyle-for-hero/:hero', function(req, res) {
     });
 });
 
+app.use(favicon(__dirname + '/src/favicon.ico'));
 app.use('/', express.static(__dirname + '/src'));
 app.listen(3000, function() { console.log('listening on port 3000'); });
