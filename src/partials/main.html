@@ -1,0 +1,15 @@
+<div class="container">
+    <button ng-click="vm.switchUniverse()">{{vm.otherUniverse}}</button>
+    <div id='marvel-heroes' ng-show='vm.marvelUniverse' ng-repeat="hero in vm.marvel">
+        <div class='hero-container'>
+            <img width=180 ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+            <p><a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>{{hero.name}}</a></p>
+        </div>
+    </div>
+    <div id='dc-heroes' ng-hide='vm.marvelUniverse' ng-repeat="hero in vm.dc">
+        <div class='hero-container'>
+            <img width=180 ng-src="{{hero.icon}}" />
+            <p><a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>{{hero.name}}</a></p>
+        </div>
+    </div>
+</div>
