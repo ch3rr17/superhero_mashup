@@ -38,3 +38,10 @@
   background-position: center;
   background-size: cover;
 }
+
+.home-container{
+  display: block,
+  margin: 0 auto;
+  margin-top: 60px;
+
+}

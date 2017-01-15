@@ -1,16 +1,22 @@
 <div id='music-content' class='container'>
-	<h1 class='text-center'>{{vm.movie}} - Music & Cosplay</h1>
-	<div class='row lifestyle'>
-    <div class='col-xs-12 col-sm-6 text-center'>
-      <iframe id='spotify-player' ng-src="{{vm.trustSrc(vm.albumEmbedPlayer)}}" frameborder="0" allowtransparency="true"></iframe>
-    </div>
-    <div class='col-xs-12 col-sm-6 text-center'>
-      <div class='cosplay-container row text-center'>
-        <div class='col-xs-12 col-sm-12 col-md-6 col-lg-4 lifestyle-container' ng-repeat="lifestyle in vm.lifestyle.images | limitTo: 6">
-          <div class='cosplay-cell' back-img="{{lifestyle.display_sizes[0].uri}}.jpg">
-          </div>
+    <h1 class='text-center'>{{vm.movie}} - Music & Cosplay</h1>
+    <div class='row lifestyle'>
+        <div class='col-xs-12 col-sm-6 text-center'>
+            <iframe id='spotify-player' ng-src="{{vm.trustSrc(vm.albumEmbedPlayer)}}" frameborder="0" allowtransparency="true"></iframe>
         </div>
-      </div>
+        <div class='col-xs-12 col-sm-6 text-center'>
+            <div class='cosplay-container row text-center'>
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-4 lifestyle-container' ng-repeat="lifestyle in vm.lifestyle.images">
+                    <div class='cosplay-cell' back-img="{{lifestyle.display_sizes[0].uri}}.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class='row'>
+        <div class='home-container text-center'>
+            <a ui-sref='main'><img width=100 height=100 src='/img/back-btn.png' /></a>
+            <p style="color: #fff">Search new character</p>
+        </div>
+    </div>
 </div>
