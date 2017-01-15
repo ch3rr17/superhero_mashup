@@ -18,6 +18,17 @@
                           .state('music', { url: '/music/{hero}/{movie}',  templateUrl: 'partials/music.html', controller: 'MusicController as vm' });
 
         })
+        .run(function($rootScope) {
+          $rootScope.currentUniverse = 'marvel';
+        })
+        .directive('backImg', function(){
+          return function(scope, element, attrs){
+            var url = attrs.backImg;
+            element.css({
+              'background-image': 'url(' + url +')'
+            });
+          };
+        })
 
         .value('apiUrl', 'http://localhost:3000');
 })();

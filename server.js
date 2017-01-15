@@ -19,8 +19,8 @@ app.get('/movies-for-hero/:hero', function(req, res) {
             } else {
                 res.send(error);
             }
-        })
-})
+        });
+});
 
 
 

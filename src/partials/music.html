@@ -1,7 +1,16 @@
-<h1>{{vm.movie}}</h1>
-
-<div class="lifestyle-container" ng-repeat="lifestyle in vm.lifestyle.images | limitTo: 5">
-<img src="{{lifestyle.display_sizes[0].uri}}.jpg" />
-
+<div id='music-content' class='container'>
+	<h1 class='text-center'>{{vm.movie}} - Music & Cosplay</h1>
+	<div class='row lifestyle'>
+    <div class='col-xs-12 col-sm-6 text-center'>
+      <iframe id='spotify-player' ng-src="{{vm.trustSrc(vm.albumEmbedPlayer)}}" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <div class='col-xs-12 col-sm-6 text-center'>
+      <div class='cosplay-container row text-center'>
+        <div class='col-xs-12 col-sm-12 col-md-6 col-lg-4 lifestyle-container' ng-repeat="lifestyle in vm.lifestyle.images | limitTo: 6">
+          <div class='cosplay-cell' back-img="{{lifestyle.display_sizes[0].uri}}.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<iframe ng-src="{{vm.trustSrc(vm.albumEmbedPlayer)}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>

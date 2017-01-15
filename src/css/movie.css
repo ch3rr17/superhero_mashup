@@ -1,0 +1,12 @@
+.movie-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.movie-container img:hover {
+  border: 5px solid white;
+}
+
+#movies-content {
+  padding-bottom: 100px;
+}

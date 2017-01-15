@@ -30,7 +30,7 @@
     <div id='dc-heroes' class='row' ng-hide='vm.marvelUniverse'>
       <div ng-repeat="hero in vm.dc">
         <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
-          <a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>
+          <a ui-sref="movies({hero: '{{hero.name}}'})">
             <img width=180 ng-src="{{hero.icon}}" />
           </a>
         </div>

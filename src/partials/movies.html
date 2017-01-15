@@ -1,7 +1,10 @@
-<p>{{vm.hero}}</p>
-
-<h2>Movies</h2>
-<div ng-repeat="movie in vm.movies">
-	<img width=180 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg"/>
-	<p><a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})" target='_blank'>{{movie.title}}</a></p>
+<div id='movies-content' class='container'>
+	<h1 class='text-center'>Movies with {{vm.hero}}</h1>
+	<div class='row text-center'>
+		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-repeat="movie in vm.movies">
+			<a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">
+				<img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg"/>
+			</a>
+		</div>
+	</div>
 </div>
