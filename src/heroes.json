@@ -12,6 +12,16 @@
 
 		},
 		{
+        	"id": 1009268,
+        	"name": "Deadpool",
+        	"description": "",
+        	"modified": "2016-09-28T12:12:40-0400",
+        	"thumbnail": {
+          		"path": "http://i.annihil.us/u/prod/marvel/i/mg/9/90/5261a86cacb99",
+          		"extension": "jpg"
+        	}
+        },
+		{
 	    	"id": 1009664,
 	    	"name": "Thor",
 	    	"description": "As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate.  He's self-assured, and he would never, ever stop fighting for a worthwhile cause.",
