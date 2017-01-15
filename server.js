@@ -5,6 +5,8 @@ var request = require('request');
 var spotify = require('spotify');
 var favicon = require('serve-favicon');
 
+var port = process.env.PORT || 8080;
+
 
 app.get('/movies-for-hero/:hero', function(req, res) {
     request('http://imdb.wemakesites.net/api/search?api_key=' + IMDB_API_KEY + '&q=' + req.params.hero,
@@ -48,4 +50,4 @@ app.get('/lifestyle-for-hero/:hero', function(req, res) {
 
 app.use(favicon(__dirname + '/src/favicon.ico'));
 app.use('/', express.static(__dirname + '/src'));
-app.listen(3000, function() { console.log('listening on port 3000'); });
+app.listen(port, function() { console.log('listening on port' + port); });

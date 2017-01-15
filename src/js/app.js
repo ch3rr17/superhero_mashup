@@ -30,5 +30,5 @@
           };
         })
 
-        .value('apiUrl', 'http://localhost:3000');
+        .value('apiUrl', 'http://hero-tracks.herokuapp.com');
 })();
