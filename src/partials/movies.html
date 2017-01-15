@@ -1,20 +1,20 @@
 <div id='movies-content' class='container'>
-	<h1 class='text-center'>Select a movie with {{vm.hero}}</h1>
-	<h3 class='text-center' ng-show='vm.noMovies'>No movies found for this hero :(</h3>
-	<div class='row text-center' ng-hide='vm.noMovies'>
-		<img class='loader' src="/img/loading.gif"/ ng-show="vm.loading">
-		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-hide="vm.loading" ng-repeat="movie in vm.movies">
-			<a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">
-				<img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg" alt="{{movie.title}}"/>
-			</a>
-		</div>
-	</div>
-	<div class='row'>
+    <h1 class='text-center'>Select a movie with {{vm.hero}}</h1>
+    <h3 class='text-center' ng-show='vm.noMovies'>No movies found for this hero :(</h3>
+    <div class='row text-center' ng-hide='vm.noMovies'>
+        <img class='loader' src="/img/loading.gif" / ng-show="vm.loading">
+        <div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-hide="vm.loading" ng-repeat="movie in vm.movies">
+            <a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">
+                <img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg" alt="{{movie.title}}" />
+            </a>
+        </div>
+    </div>
+    <div class='row'>
         <div class='home-container text-center'>
-					<a ui-sref='main'>
-						<img src='/img/cloud-home.png' />
-						<!-- <p style="color: #fff">Home</p> -->
-					</a>
+            <a ui-sref='main'>
+                <img src='/img/cloud-home.png' />
+                <!-- <p style="color: #fff">Home</p> -->
+            </a>
         </div>
     </div>
 </div>

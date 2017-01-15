@@ -18,7 +18,7 @@
 
     <div id='marvel-heroes' class='row' ng-show='vm.marvelUniverse'>
       <div ng-repeat="hero in vm.marvel">
-        <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
+        <div class='hero-container col-xs-12 col-sm-4 col-md-8 text-center'>
           <a ui-sref="movies({hero: '{{hero.name}}'})">
             <img width=180 height=auto ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
           </a>
