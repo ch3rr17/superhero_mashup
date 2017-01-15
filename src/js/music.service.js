@@ -10,7 +10,8 @@
     /* @ngInject */
     function MusicFactory($http, $log, $q, $stateParams) {
         var service = {
-            getMusicForHero: getMusicForHero
+            getMusicForHero: getMusicForHero,
+            getLifeStyleForHero: getLifeStyleForHero
         };
         return service;
 
@@ -33,6 +34,24 @@
 
             return defer.promise;
 
+        }
+
+        function getLifeStyleForHero (){
+            var defer = $q.defer();
+            $http({
+                    method: 'GET',
+                    url: '/lifestyle-for-hero/' + $stateParams.hero
+                })
+                .then(
+                    function(response) {
+                        defer.resolve(response);
+                    },
+                    function(error) {
+                        defer.reject(error.data);
+                    }
+                );
+
+            return defer.promise;
         }
 
         

@@ -3,5 +3,5 @@
 <h2>Movies</h2>
 <div ng-repeat="movie in vm.movies">
 	<img width=180 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg"/>
-	<p><a ui-sref="music({movie: '{{movie.title}}'})" target='_blank'>{{movie.title}}</a></p>
+	<p><a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})" target='_blank'>{{movie.title}}</a></p>
 </div>
