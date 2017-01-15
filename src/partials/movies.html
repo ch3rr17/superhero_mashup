@@ -5,14 +5,16 @@
 		<img class='loader' src="/img/loading.gif"/ ng-show="vm.loading">
 		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-hide="vm.loading" ng-repeat="movie in vm.movies">
 			<a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">
-				<img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg"/>
+				<img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg" alt="{{movie.title}}"/>
 			</a>
 		</div>
 	</div>
 	<div class='row'>
         <div class='home-container text-center'>
-            <a ui-sref='main'><img width=100 height=100 src='/img/back-btn.png' /></a>
-            <p style="color: #fff">Home</p>
+					<a ui-sref='main'>
+						<img width=100 height=100 src='/img/back-btn.png' />
+						<p style="color: #fff">Home</p>
+					</a>
         </div>
     </div>
 </div>
