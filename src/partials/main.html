@@ -1,15 +1,41 @@
-<div class="container">
-    <button ng-click="vm.switchUniverse()">{{vm.otherUniverse}}</button>
-    <div id='marvel-heroes' ng-show='vm.marvelUniverse' ng-repeat="hero in vm.marvel">
-        <div class='hero-container'>
+<div id='page-bg'>
+
+</div>
+
+<div id='main-content' class="container-fluid">
+  <div id='heroes-container' class='container'>
+
+    <div class='row text-center'>
+      <div class="col-xs-6">
+        <img class='marvel-logo' ng-src='img/marvel-logo.png' ng-click="vm.setUniverse('marvel')"/>
+        <!-- <button ng-click="vm.switchUniverse()">{{vm.otherUniverse}}</button> -->
+      </div>
+      <div class="col-xs-6">
+        <img class='dc-logo' ng-src='img/dc-logo.png' ng-click="vm.setUniverse('dc')"/>
+        <!-- <button ng-click="vm.switchUniverse()">{{vm.otherUniverse}}</button> -->
+      </div>
+    </div>
+
+
+    <div id='marvel-heroes' class='row' ng-show='vm.marvelUniverse'>
+      <div ng-repeat="hero in vm.marvel">
+        <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
+          <a ui-sref="movies({hero: '{{hero.name}}'})">
             <img width=180 ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
-            <p><a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>{{hero.name}}</a></p>
+          </a>
         </div>
+      </div>
     </div>
-    <div id='dc-heroes' ng-hide='vm.marvelUniverse' ng-repeat="hero in vm.dc">
-        <div class='hero-container'>
+
+    <div id='dc-heroes' class='row' ng-hide='vm.marvelUniverse'>
+      <div ng-repeat="hero in vm.dc">
+        <div class='hero-container col-xs-6 col-sm-4 col-md-3 text-center'>
+          <a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>
             <img width=180 ng-src="{{hero.icon}}" />
-            <p><a ui-sref="movies({hero: '{{hero.name}}'})" target='_blank'>{{hero.name}}</a></p>
+          </a>
         </div>
+      </div>
     </div>
+
+  </div>
 </div>

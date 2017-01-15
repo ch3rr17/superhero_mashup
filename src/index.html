@@ -12,10 +12,13 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/movie.css">
     <!-- endinject -->
 </head>
 
-<body>
+<body ng-class="{'marvel-container': currentUniverse == 'marvel', 'dc-container': currentUniverse == 'dc'}">
     <div ui-view></div>
     <!-- bower:js -->
     <script src="lib/angular/angular.js"></script>

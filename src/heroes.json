@@ -1,4 +1,4 @@
-{ 
+{
 	"marvel": [
 		{
 	    	"id": 1009610,
@@ -10,7 +10,7 @@
 	        	"extension": "jpg"
 	    	}
 
-		}, 
+		},
 		{
 	    	"id": 1009664,
 	    	"name": "Thor",
@@ -96,28 +96,28 @@
 	"dc": [
 		{
 	    	"name": "Aquaman",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Aquaman_586ee13f6b1e68.54498806.jpg"
-		}, 
-	    {
-	        "name": "Superman",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Superman_586ee062bd22e7.56771617.jpg"
-	    }, 
-	    {
-	        "name": "Batman",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Batman_586ee0ede83b34.43793048.jpg"
-	    }, 
-	    {
-	        "name": "Wonder Woman",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_WonderWoman_586ee18aa22734.31079588.jpg"
-	    }, 
-	    {
-	        "name": "Green Lantern",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_GreenLantern_586ee10f95fd15.61334334.jpg"
-	    },
-	    {
-	        "name": "Flash",
-	        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_TheFlash_586ee164924b51.53963465.jpg"
-	    }
+	      "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Aquaman_586ee13f6b1e68.54498806.jpg"
+		},
+    {
+        "name": "Superman",
+        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Superman_586ee062bd22e7.56771617.jpg"
+    },
+    {
+        "name": "Batman",
+        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_Batman_586ee0ede83b34.43793048.jpg"
+    },
+    {
+        "name": "Wonder Woman",
+        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_WonderWoman_586ee18aa22734.31079588.jpg"
+    },
+    {
+        "name": "Green Lantern",
+        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_GreenLantern_586ee10f95fd15.61334334.jpg"
+    },
+    {
+        "name": "Flash",
+        "icon": "http://media.dcentertainment.com/sites/default/files/styles/character_thumb_160x160/public/CharThumb_Rebirth_TheFlash_586ee164924b51.53963465.jpg"
+    }
 	]
 
 }
