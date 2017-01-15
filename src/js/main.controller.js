@@ -5,21 +5,20 @@
         .module('app')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['MainFactory', '$log'];
+    MainController.$inject = ['MainFactory', '$log', '$rootScope'];
 
     /* @ngInject */
-    function MainController(MainFactory, $log) {
+    function MainController(MainFactory, $log, $rootScope) {
         var vm = this;
         vm.title = 'MainController';
         vm.marvelUniverse = true;
-        vm.otherUniverse = 'DC';
+        $rootScope.currentUniverse = 'marvel';
 
-       
         ////////////////
 
-        vm.switchUniverse = function() {
-        	vm.marvelUniverse = !vm.marvelUniverse;
-        	vm.otherUniverse = vm.marvelUniverse ? 'DC' : 'Marvel';
+        vm.setUniverse = function(universe) {
+          $rootScope.currentUniverse = universe;
+          vm.marvelUniverse = $rootScope.currentUniverse == 'marvel';
         };
 
         vm.grabMarvels = function() {
