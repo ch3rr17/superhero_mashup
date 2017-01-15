@@ -5,10 +5,10 @@
         .module('app')
         .controller('MusicController', MusicController);
 
-    MusicController.$inject = ['MusicFactory', '$log', '$stateParams', '$sce'];
+    MusicController.$inject = ['MusicFactory', '$log', '$stateParams', '$sce', '$timeout'];
 
     /* @ngInject */
-    function MusicController(MusicFactory, $log, $stateParams, $sce) {
+    function MusicController(MusicFactory, $log, $stateParams, $sce, $timeout) {
         var vm = this;
         vm.title = 'MusicController';
 
@@ -16,7 +16,18 @@
         vm.noPhotos = false;
         vm.albumEmbedPlayer = '';
 
+        vm.musicLoaded = false;
+        vm.photosLoaded = false;
+
+        vm.loading = true;
+
         ////////////////
+
+        function hideLoader() {
+            $timeout(function() {
+                vm.loading = false;
+            }, 500);
+        }
 
         vm.movie = $stateParams.movie;
 
@@ -34,10 +45,16 @@
                         } else {
                           vm.albumEmbedPlayer = "https://embed.spotify.com/?uri=spotify%3Aalbum%3A" + vm.album.id;
                         }
+                        vm.musicLoaded = true;
+                        if(vm.photosLoaded){
+                            hideLoader();
+                        }
                     },
                     function(error) {
+                        hideLoader();
                         $log.error(error);
                     });
+
         };
 
         vm.getMusic();
@@ -46,12 +63,18 @@
         	MusicFactory.getLifeStyleForHero()
         		.then(
                     function(response) {
+                        // has music also loaded? then loading = false
                         vm.lifestyleImages = response.data.images;
                         if (vm.lifestyleImages.length === 0) {
                           vm.noPhotos = true;
                         }
+                        vm.photosLoaded = true;
+                        if(vm.musicLoaded){
+                            hideLoader();
+                        }
                     },
                     function(error) {
+                        hideLoader();
                         $log.error(error);
                     });
         };

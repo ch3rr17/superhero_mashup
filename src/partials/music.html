@@ -1,11 +1,15 @@
 <div id='music-content' class='container'>
     <h1 class='text-center'>{{vm.movie}}: Music & Cosplay</h1>
     <div class='row lifestyle'>
-        <div class='col-xs-12 col-sm-6 text-center'>
+    	<div class='col-xs-12 text-center'>
+    		<img class='loader' src="/img/loading.gif" ng-show="vm.loading" />
+    	</div>
+    	
+        <div class='col-xs-12 col-sm-6 text-center' ng-hide="vm.loading">
             <h4 ng-show='vm.noAlbum'>No music found for this movie :(</h4>
             <iframe id='spotify-player' ng-hide='vm.noAlbum' ng-src="{{vm.trustSrc(vm.albumEmbedPlayer)}}" frameborder="0" allowtransparency="true"></iframe>
         </div>
-        <div class='col-xs-12 col-sm-6 text-center'>
+        <div class='col-xs-12 col-sm-6 text-center' ng-hide="vm.loading">
             <h4 ng-show='vm.noPhotos'>No cosplay photos found for this movie :(</h4>
             <div ng-hide='vm.noPhotos' class='cosplay-container row text-center'>
                 <div class='col-xs-12 col-sm-12 col-md-6 col-lg-4 lifestyle-container' ng-repeat="lifestyle in vm.lifestyleImages">

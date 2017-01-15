@@ -2,7 +2,8 @@
 	<h1 class='text-center'>Select a movie with {{vm.hero}}</h1>
 	<h3 class='text-center' ng-show='vm.noMovies'>No movies found for this hero :(</h3>
 	<div class='row text-center' ng-hide='vm.noMovies'>
-		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-repeat="movie in vm.movies">
+		<img class='loader' src="/img/loading.gif"/ ng-show="vm.loading">
+		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-hide="vm.loading" ng-repeat="movie in vm.movies">
 			<a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">
 				<img height=300 width=200 ng-src="{{movie.thumbnail.split('._')[0]}}.jpg"/>
 			</a>
