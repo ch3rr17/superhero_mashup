@@ -1,5 +1,5 @@
 <div id='movies-content' class='container'>
-	<h1 class='text-center'>Movies with {{vm.hero}}</h1>
+	<h1 class='text-center'>Select a movie with {{vm.hero}}</h1>
 	<div class='row text-center'>
 		<div class='col-xs-6 col-sm-4 col-md-3 movie-container' ng-repeat="movie in vm.movies">
 			<a ui-sref="music({hero: '{{vm.hero}}', movie: '{{movie.title}}'})">

@@ -1,6 +1,7 @@
 html {
   height: 100%;
   color: white;
+  font-family: comic-book;
 }
 body {
   min-height: 100%;
@@ -8,4 +9,10 @@ body {
 
 h1 {
   color: rgb(199,199,199);
+  font-family: comic-book;
+}
+
+@font-face {
+    font-family: comic-book;
+    src: url(../fonts/comic-book.otf);
 }
