@@ -33,7 +33,7 @@ app.get('/album-for-movie/:movie', function(req, res) {
 app.get('/lifestyle-for-hero/:hero', function(req, res) {
 
     var options = {
-      url: 'https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&phrase=' + req.params.hero + ' cosplay',
+      url: 'https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&phrase=' + req.params.hero + ' ' + 'cosplay',
       headers: {
         'Api-Key': 'b4734jk5yhgqgv9v4grh923q'
       }
